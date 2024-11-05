@@ -9,9 +9,14 @@ Pull nginx default image and make our own customize image with multiple versions
    
 3. verify docker images using command
    # docker images
+![image](https://github.com/user-attachments/assets/42b41f33-1566-4b26-b36c-30dbf9a4e0a7)
+
+4. create container from image using command
+   # docker run -d --name containername  imagename -p external-traffic-port#:internal-traffic-port#
 
    
-![nginx-image](https://github.com/user-attachments/assets/6ab11fe8-07cf-4fca-b05f-fbe3a5ad5d70)
+
+
 
 
 
