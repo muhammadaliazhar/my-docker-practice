@@ -1,18 +1,42 @@
-|     Commands                 |    Description                                  |
-| ------------------------------- | --------------------------------------------- |
-| docker ps | List all running containers |
-| docker ps -a | List all containers stopped, running |
-| docker stop container-id | Stop the container which is running |
-| docker start container-id | Start the container which is stopped |
-| docker restart container-id | Restart the container which is running |
-| docker port container-id | List port mappings of a specific container |
-| docker rm container-id or name | Remove the stopped container |
-| docker rm -f container-id or name| Remove the running container forcefully |
-| docker pull imagename | Pull the image from docker hub repository |
-| docker exec -it container-name /bin/sh | Connect to linux container and execute commands in container |
-| docker rmi image-id | Remove the docker image |
-| docker logout | Logout from docker hub |
-| docker login -u username -p password | Login to docker hub |
-| docker log containerid | To see logs or to troubleshoot issues in a container |
-| docker top container-id  | Display the running processes of a container |
-| docker version | Show the Docker version information |
+
+** to see all images:                     docker images
+
+** to see all running containers:         docker ps
+
+** to see all stopped containers:         docker ps -a
+
+** to stop a container:                   docker stop containerid      
+
+** to start a container:                  docker start containerid 
+
+** to restart a container:                docker restart containerid 
+
+** to remove a container:                 docker rm container-id
+
+** to remove a running container:         docker rm -f container-id
+
+** to remove a docker image:              docker rmi imageid
+
+** to login your docker hub account:      docker login
+
+** to logout your docker hub account:      docker logout
+
+
+
+
+
+** to pull a image from docker hub repository:              docker pull imagename
+
+** to create image from Dockerfile:                         docker build -t imagename .   ( or Dockerfile path )
+
+** create container ( -d ) from our image:                  docker run -d --name  containername  imagename   /bin/bash       # -d means our container starts but we are not connected to that container
+
+** create container ( -it ) from our image:                 docker run -it --name  containername  imagename   /bin/bash      # -it means our container starts and we are inside that container, but when we type exit and move out from the container, then our container stops.
+
+**  to connect with a running container:                    docker exec -it containerid /bin/bash
+
+** to see logs or to troubleshoot issues in a container:    docker log containerid
+
+** to see running processes in a container:                 docker top containerid
+
+
