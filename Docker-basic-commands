@@ -29,7 +29,7 @@
 
 ** to create image from Dockerfile:                         docker build -t imagename .   ( or Dockerfile path )
 
-** create container ( -d ) from our image:                  docker run -d --name  containername  imagename   /bin/bash       # -d means our container starts but we are not connected to that container
+** create container ( -d ) from our image:                  docker run -d --name  containername  imagename   /bin/bash       # -d means our container starts but we are not connected (login to container shell) to that container
 
 ** create container ( -it ) from our image:                 docker run -it --name  containername  imagename   /bin/bash      # -it means our container starts and we are inside that container, but when we type exit and move out from the container, then our container stops.
 
@@ -39,4 +39,12 @@
 
 ** to see running processes in a container:                 docker top containerid
 
+** image or volume in use means:                            container is using that image or volume is attached to the container
 
+** to remove all the unused images/volumes:                 docker prune
+
+** to connect a running container we have two optoions:     By using attach command, we login to the main process inside the container, and by using exec command, it creates a new process inside the container and we login to that process
+                  1. docker attach containerid
+                  2. docker exec containerid 
+
+**  port number  8080:8080 means:                            external traffic port #  :  internal traffic port #  ( outside container port: inside container port)
