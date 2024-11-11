@@ -7,18 +7,22 @@
 
 
 ## Step-1: Run the base Nginx container
+```
 docker run --name mynginxdefault -p 3666:80 -d nginx
 docker ps
 go to browser and type localhost:3666
 here you see nginx default page
+```
 
 ## Step-2: login to the container shell and create index.html file
+```
 docker exec -it containerid /bin/bash
 cd /usr/share/nginx/html
 echo "Welcome to Docker" > index.html
 exit
 go to browser and type localhost:3666
 here you see your nginx custom page
+```
 
 
 ## Step-3: Create Docker Image from that container
@@ -39,7 +43,9 @@ docker login
 docker push maliazhar/mycustom-nginx:v1-release
 ```
 ## Step-5: Verify the image on docker hub
+```
 - Login to docker hub and verify the image we have pushed
 - Url: https://hub.docker.com/repositories
+```
 
 ## Step-6: Go to another machine and pull that image and run conatiner from that image
