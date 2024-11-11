@@ -48,3 +48,5 @@
                   2. docker exec containerid 
 
 **  port number  8080:8080 means:                            external traffic port #  :  internal traffic port #  ( outside container port: inside container port)
+
+** to connect with a container shell, first we need to start that container, then we can login to the container shell
