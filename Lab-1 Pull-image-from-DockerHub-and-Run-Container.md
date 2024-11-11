@@ -1,4 +1,4 @@
-# Flow-1: Pull Docker Image from Docker Hub and Run it
+# Flow-1: Pull Docker Image from Docker Hub and Run Container
 
 ## Step-1: Verify Docker version and also login to Docker Hub
 ```
@@ -6,16 +6,17 @@ docker version
 docker login
 ```
 
-## Step-2: Pull Image from Docker Hub
+## Step-2: Pull Image from Docker Hub and verify it
 ```
 docker pull stacksimplify/dockerintro-springboot-helloworld-rest-api:1.0.0-RELEASE
+docker images
 ```
 
 ## Step-3: Run the downloaded Docker Image & Access the Application
-- Copy the docker image name from Docker Hub
 ```
 docker run --name app1 -p 80:8080 -d stacksimplify/dockerintro-springboot-helloworld-rest-api:1.0.0-RELEASE
-http://localhost/hello
+docker ps
+  **  Go to browser and hit this url http://localhost/hello
 
 ## Step-4: List Running Containers
 ```
