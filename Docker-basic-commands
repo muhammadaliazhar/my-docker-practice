@@ -29,9 +29,9 @@
 
 ** to create image from Dockerfile:                         docker build -t imagename .   ( or Dockerfile path )
 
-** create container ( -d ) from our image:                  docker run -d --name  containername  imagename   /bin/bash       # -d means our container starts but we are not connected (login to container shell) to that container
+** create container ( -d ) from our image:                  docker run -d --name  containername  imagename -p 80:80     # -d means our container starts but we are not connected (login to container shell) to that container
 
-** create container ( -it ) from our image:                 docker run -it --name  containername  imagename   /bin/bash      # -it means our container starts and we are inside that container, but when we type exit and move out from the container, then our container stops.
+** create container ( -it ) from our image:                 docker run -it --name  containername  imagename -p 8081:8081  /bin/bash      # -it means our container starts and we are inside that container, but when we type exit and move out from the container, then our container stops.
 
 **  to connect with a running container:                    docker exec -it containerid /bin/bash
 
