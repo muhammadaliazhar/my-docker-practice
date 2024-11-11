@@ -49,3 +49,26 @@ docker push maliazhar/mycustom-nginx:v1-release
 ```
 
 ## Step-6: Go to another machine and pull that image and run conatiner from that image
+```
+docker pull maliazhar/mycustom-nginx:v1-release
+docker images
+docker run --name container1 -p 3666:80 -d maliazhar/mycustom-nginx:v1-release
+docker ps
+```
+## Step-7: login to container and make changes in code and push the image version2.0 in dockerhub
+```
+docker exec -it containerid /bin/bash
+cat /usr/share/nginx/html/index.html
+Welcome To Rolustech-app-version:2.0
+exit
+docker ps
+docker commit containerid  imagename
+docker commit containerid maliazhar/mycustom-nginx
+docker tag maliazhar/mycustom-nginx  maliazhar/mycustom-nginx:v2.0-release
+docker images
+docker push maliazhar/mycustom-nginx:v2.0-release
+```
+
+
+
+
